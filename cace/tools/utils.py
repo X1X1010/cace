@@ -75,7 +75,7 @@ def get_unique_atomic_number(atoms_list: List[Atoms]) -> List[int]:
     return list(unique_atomic_numbers)
 
 def compute_average_E0s(
-    atom_list: Atoms, zs: List[int] = None, energy_key: str = "energy"
+    atom_list: Atoms, zs: List[int] = None,
 ) -> Dict[int, float]:
     """
     Function to compute the average interaction energy of each chemical element
@@ -91,7 +91,7 @@ def compute_average_E0s(
     A = np.zeros((len_xyz, len_zs))
     B = np.zeros(len_xyz)
     for i in range(len_xyz):
-        B[i] = atom_list[i].info[energy_key]
+        B[i] = atom_list[i].get_potential_energy()
         for j, z in enumerate(zs):
             A[i, j] = np.count_nonzero(atom_list[i].get_atomic_numbers() == z)
     try:

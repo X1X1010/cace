@@ -7,13 +7,6 @@ setup(
     author_email='tonicbq@gmail.com',
     description='Cartesian Atomic Cluster Expansion Machine Learning Potential',
     packages=find_packages(),
-    install_requires=[
-        'numpy<2',
-        'ase<=3.22.1',
-        'torch',
-        'matscipy',
-        # 'lightning', # Uncomment if needed
-    ],
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

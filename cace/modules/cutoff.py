@@ -11,7 +11,7 @@ import torch.nn as nn
 __all__ = ["CosineCutoff", "MollifierCutoff", "PolynomialCutoff", "SwitchFunction"]
 
 def cosine_cutoff(input: torch.Tensor, cutoff: torch.Tensor):
-    """ Behler-style cosine cutoff.
+    r""" Behler-style cosine cutoff.
 
         .. math::
            f(r) = \begin{cases}
@@ -23,7 +23,7 @@ def cosine_cutoff(input: torch.Tensor, cutoff: torch.Tensor):
         Args:
             cutoff (float, optional): cutoff radius.
 
-        """
+    """
 
     # Compute values of cutoff function
     input_cut = 0.5 * (torch.cos(input * math.pi / cutoff) + 1.0)
