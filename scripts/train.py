@@ -27,7 +27,7 @@ def main():
     device = init_device(config['use_device'])
 
     if config['zs'] is None:
-        xyz = ase.io.read(config['train_path'], ':', format='extxyz')
+        xyz = ase.io.read(config['train_path'], ':')
         config['zs'] = get_unique_atomic_number(xyz)
 
     # load the avge0 dict from a file if possible
